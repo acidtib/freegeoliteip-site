@@ -42,11 +42,12 @@
             let data = response.data
 
             self.append(`<li>Your IP: ${data.ip}</li>`);
-            self.append(`<li>City: ${data.city}</li>`);
-            self.append(`<li>Region: ${data.region_name}</li>`);
-            self.append(`<li>Country: ${data.country_name}</li>`);
-            self.append(`<li>Latitude: ${data.latitude}</li>`);
-            self.append(`<li>Longitude: ${data.longitude}</li>`);
+            self.append(`<li>IP Type: ${data.type}</li>`);
+            self.append(`<li>City: ${data.location.city}</li>`);
+            self.append(`<li>Region: ${data.location.region.name}</li>`);
+            self.append(`<li>Country: ${data.location.country.name}</li>`);
+            self.append(`<li>Latitude: ${data.location.latitude}</li>`);
+            self.append(`<li>Longitude: ${data.location.longitude}</li>`);
 
             if (data.latitude) {
               renderMap(data.latitude, data.longitude)  
